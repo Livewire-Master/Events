@@ -22,8 +22,11 @@
 <script>
     let tid = null;
 
-    $wire.on('hide-notification', () =>
+    Livewire.on('notify', (event) =>
     {
+        $wire.set('message', event.message);
+        $wire.set('is_visible', true);
+
         clearTimeout(tid);
 
         tid = setTimeout(
