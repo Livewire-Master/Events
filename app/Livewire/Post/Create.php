@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Post;
 
+use App\Models\Post;
 use Livewire\Component;
 
 class Create extends Component
@@ -42,8 +43,14 @@ class Create extends Component
     {
         $this->validate();
 
-        // create a post
+        /*$post = Post::create(
+            [
+                'title'        => $this->title,
+                'description'  => $this->description,
+                'is_published' => false,
+            ]
+        );*/
 
-        // dispatch its event
+        $this->dispatch('post-created');
     }
 }

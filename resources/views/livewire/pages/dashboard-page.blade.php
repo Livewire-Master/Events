@@ -5,4 +5,7 @@
     <hr>
     <livewire:post.create/>
     <hr>
+
+
+    <livewire:notification/>
 </div>
