@@ -11,6 +11,23 @@ use Livewire\Component;
 class Grid extends Component
 {
     /**
+     * Clicks count
+     *
+     * @var int
+     */
+    public int $clicks = 0;
+
+    /**
+     * Add a click
+     *
+     * @return void
+     */
+    public function clicked(): void
+    {
+        $this->clicks++;
+    }
+
+    /**
      * Update Posts List
      *
      * @return void

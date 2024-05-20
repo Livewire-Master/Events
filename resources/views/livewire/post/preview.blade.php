@@ -12,4 +12,7 @@
     <button wire:click.prevent="delete">
         Delete
     </button>
+    <button wire:click.prevent="$parent.clicked()">
+        Click
+    </button>
 </div>
