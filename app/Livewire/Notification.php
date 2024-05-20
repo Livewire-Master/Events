@@ -24,12 +24,15 @@ class Notification extends Component
     /**
      * Show notification
      *
+     * @param string $message
+     *
      * @return void
      */
-    #[On('post-created')]
-    public function show(): void
+    #[On('notify')]
+    public function show(string $message): void
     {
         $this->is_visible = true;
-        $this->message    = 'new post created';
+        $this->message    = $message;
+        $this->dispatch('hide-notification');
     }
 }

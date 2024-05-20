@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Post;
 
-use App\Models\Post;
 use Livewire\Component;
 
 class Create extends Component
@@ -51,6 +50,9 @@ class Create extends Component
             ]
         );*/
 
-        $this->dispatch('post-created');
+        $this->dispatch(
+            event  : 'notify',
+            message: "Post Created! Title: $this->title",
+        );
     }
 }

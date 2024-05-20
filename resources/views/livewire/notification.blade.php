@@ -17,3 +17,22 @@
         </div>
     @endif
 </div>
+
+@script
+<script>
+    let tid = null;
+
+    $wire.on('hide-notification', () =>
+    {
+        clearTimeout(tid);
+
+        tid = setTimeout(
+            () =>
+            {
+                $wire.set('is_visible', false);
+            },
+            3000
+        );
+    });
+</script>
+@endscript
