@@ -3,6 +3,7 @@
 namespace App\Livewire\Post;
 
 use App\Models\Post;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Preview extends Component
@@ -24,5 +25,16 @@ class Preview extends Component
     public function mount(Post $post): void
     {
         $this->post = $post;
+    }
+
+    /**
+     * Refresh current post
+     *
+     * @return void
+     */
+    #[On('post-updated.{post.id}')]
+    public function refreshPost(): void
+    {
+        $this->dispatch('$refresh');
     }
 }

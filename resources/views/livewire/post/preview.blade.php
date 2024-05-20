@@ -6,4 +6,6 @@
     Description: {{ $post->description }}
     <br>
     Status: {{ $post->is_published ? 'Published' : 'Draft' }}
+    <br>
+    Last Update: {{ time() }}
 </div>

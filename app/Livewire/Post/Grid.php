@@ -32,8 +32,21 @@ class Grid extends Component
         return Post::all();
     }
 
-    public function togglePost(int $id)
+    /**
+     * Toggle post status and dispatch renderer
+     *
+     * @param int $id
+     *
+     * @return void
+     */
+    public function togglePost(int $id): void
     {
-        dd($id);
+        $post = Post::find($id);
+        $post->update(
+            [
+                'is_published' => !$post->is_published,
+            ]
+        );
+        $this->dispatch("post-updated.$post->id");
     }
 }
