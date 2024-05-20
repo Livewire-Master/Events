@@ -2,10 +2,14 @@
     <h3>
         Posts Grid
     </h3>
+    <p>
+        Last Update: {{ time() }}
+    </p>
 
     @foreach($this->posts() as $post)
-        <div>
+        <div wire:key="post-item-wrapper-{{ $post->id }}">
             <livewire:post.preview
+                @deleted="updateList"
                 wire:key="post-item-{{ $post->id }}"
                 :post="$post"
             />

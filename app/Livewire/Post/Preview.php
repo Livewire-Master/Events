@@ -37,4 +37,15 @@ class Preview extends Component
     {
         $this->dispatch('$refresh');
     }
+
+    /**
+     * Delete Current Post and Dispatch it up
+     *
+     * @return void
+     */
+    public function delete(): void
+    {
+        $this->post->delete();
+        $this->dispatch('deleted');
+    }
 }

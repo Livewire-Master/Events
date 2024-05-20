@@ -8,4 +8,8 @@
     Status: {{ $post->is_published ? 'Published' : 'Draft' }}
     <br>
     Last Update: {{ time() }}
+    <br>
+    <button wire:click.prevent="delete">
+        Delete
+    </button>
 </div>

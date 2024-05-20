@@ -33,6 +33,16 @@ class Grid extends Component
     }
 
     /**
+     * Update Posts List
+     *
+     * @return void
+     */
+    public function updateList(): void
+    {
+        $this->dispatch('$refresh');
+    }
+
+    /**
      * Toggle post status and dispatch renderer
      *
      * @param int $id
