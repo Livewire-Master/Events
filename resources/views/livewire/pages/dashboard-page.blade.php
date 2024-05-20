@@ -8,4 +8,6 @@
 
 
     <livewire:notification/>
+
+    <livewire:post.grid/>
 </div>
