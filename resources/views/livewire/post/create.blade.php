@@ -40,3 +40,13 @@
         </button>
     </form>
 </div>
+
+@script
+<script>
+    Livewire.on('hide', () =>
+    {
+        console.log('listen to "hide" event from "post.create" component')
+    }
+    );
+</script>
+@endscript
